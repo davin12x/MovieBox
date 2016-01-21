@@ -44,11 +44,22 @@
                                     <constraint firstAttribute="width" constant="61" id="xCF-it-eqK"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-fe-ENd">
+                                <rect key="frame" x="550" y="96" width="24" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Vic-9m-5Bn"/>
+                                    <constraint firstAttribute="height" constant="21" id="l8U-Om-bej"/>
+                                </constraints>
+                                <state key="normal" image="plus"/>
+                                <connections>
+                                    <segue destination="vlx-yS-we8" kind="show" id="Paz-yk-Tdp"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="StG-Tt-mZA">
                                 <rect key="frame" x="0.0" y="131" width="600" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="159" id="qpA-AR-0r0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieBoxCell" rowHeight="159" id="qpA-AR-0r0" customClass="MovieBoxCell" customModule="MovieBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qpA-AR-0r0" id="eUh-e3-9Mg">
@@ -93,20 +104,14 @@
                                                 <constraint firstItem="bEt-D6-uDh" firstAttribute="leading" secondItem="X5Y-lJ-pLX" secondAttribute="trailing" constant="38" id="w8d-T5-QGX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptions" destination="bEt-D6-uDh" id="Hzz-kp-c5v"/>
+                                            <outlet property="images" destination="X5Y-lJ-pLX" id="bYL-BT-I5v"/>
+                                            <outlet property="title" destination="3od-Rl-1WC" id="7hD-8r-7fT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-fe-ENd">
-                                <rect key="frame" x="550" y="96" width="24" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="Vic-9m-5Bn"/>
-                                    <constraint firstAttribute="height" constant="21" id="l8U-Om-bej"/>
-                                </constraints>
-                                <state key="normal" image="plus"/>
-                                <connections>
-                                    <segue destination="vlx-yS-we8" kind="show" id="Paz-yk-Tdp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.11372549019607843" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -131,15 +136,18 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tHb-d5-bvb"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="StG-Tt-mZA" id="pJk-E0-rAk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Movie-->
         <scene sceneID="nPV-tb-uen">
             <objects>
-                <viewController id="vlx-yS-we8" sceneMemberID="viewController">
+                <viewController id="vlx-yS-we8" customClass="CreateMovie" customModule="MovieBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKu-kg-S7i"/>
                         <viewControllerLayoutGuide type="bottom" id="jre-1M-siF"/>
@@ -155,16 +163,26 @@
                                     <constraint firstAttribute="width" constant="201" id="leC-gn-lbE"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-9u-YPr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-9u-YPr">
                                 <rect key="frame" x="73" y="186" width="455" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-BI-tKF">
-                                <rect key="frame" x="73" y="246" width="455" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-wz-qx6">
+                                <rect key="frame" x="200" y="299" width="201" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="b7e-Bg-zds"/>
+                                    <constraint firstAttribute="height" constant="141" id="eS6-mr-ujm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="+ Add Pic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddImagePressed:" destination="vlx-yS-we8" eventType="touchUpInside" id="SNB-SP-bF6"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiK-p8-ybW">
                                 <rect key="frame" x="73" y="491" width="455" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -175,6 +193,9 @@
                                 <state key="normal" title="Add Movie">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAddMoviePressesd:" destination="vlx-yS-we8" eventType="touchUpInside" id="eW4-9F-z9i"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-FN-c8B">
                                 <rect key="frame" x="224" y="112" width="152" height="32"/>
@@ -202,17 +223,12 @@
                                     <constraint firstAttribute="height" constant="43" id="OfA-AD-RVA"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-wz-qx6">
-                                <rect key="frame" x="200" y="299" width="201" height="141"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="b7e-Bg-zds"/>
-                                    <constraint firstAttribute="height" constant="141" id="eS6-mr-ujm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="+ Add Pic">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-BI-tKF">
+                                <rect key="frame" x="73" y="246" width="455" height="30"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.11372549019607843" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -237,6 +253,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="OIT-BI-tKF" secondAttribute="trailing" constant="52" id="zkU-Aa-27J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="desc" destination="OIT-BI-tKF" id="1QR-wB-LON"/>
+                        <outlet property="img" destination="5uI-Ps-rlB" id="K6v-2q-FCk"/>
+                        <outlet property="titles" destination="Pwm-9u-YPr" id="gOb-me-iK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYJ-LN-Uh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
