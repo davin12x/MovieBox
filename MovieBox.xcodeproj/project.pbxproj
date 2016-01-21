@@ -56,6 +56,9 @@
 		0AE49CAB1C502EBF00176D31 /* MovieBox */ = {
 			isa = PBXGroup;
 			children = (
+				0AE49CC31C502F0C00176D31 /* Controller */,
+				0AE49CC21C502F0600176D31 /* View */,
+				0AE49CC11C502EFD00176D31 /* Model */,
 				0AE49CAC1C502EBF00176D31 /* AppDelegate.swift */,
 				0AE49CAE1C502EBF00176D31 /* ViewController.swift */,
 				0AE49CB01C502EBF00176D31 /* Main.storyboard */,
@@ -65,6 +68,27 @@
 				0AE49CB31C502EBF00176D31 /* MovieBox.xcdatamodeld */,
 			);
 			path = MovieBox;
+			sourceTree = "<group>";
+		};
+		0AE49CC11C502EFD00176D31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0AE49CC21C502F0600176D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0AE49CC31C502F0C00176D31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
