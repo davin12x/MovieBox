@@ -1,5 +1,5 @@
 //
-//  CreateMovie.swift
+//  CV.swift
 //  MovieBox
 //
 //  Created by Lalit on 2016-01-21.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CreateMovie: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class CV: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet weak var titles:UITextField!
     @IBOutlet weak var desc: UITextField!
@@ -17,14 +17,16 @@ class CreateMovie: UIViewController,UIImagePickerControllerDelegate,UINavigation
     
     var imagePicker: UIImagePickerController!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         img.layer.cornerRadius = img.frame.width/2
         img.clipsToBounds = true
-
+        postMovie.layer.cornerRadius = 20
+        postMovie.clipsToBounds = true
+        
     }
     @IBAction func onAddMoviePressesd(sender:AnyObject!){
         if let title = titles.text where title != ""{
@@ -45,16 +47,14 @@ class CreateMovie: UIViewController,UIImagePickerControllerDelegate,UINavigation
         }
         
     }
+    @IBOutlet weak var postMovie: UIButton!
     @IBAction func onAddImagePressed(sender:AnyObject!){
         presentViewController(imagePicker, animated: true, completion: nil)
         sender.setTitle("", forState: .Normal)
     }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         img.image = image
     }
-
-    
-
-
 }

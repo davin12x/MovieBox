@@ -12,6 +12,7 @@ import CoreData
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var movies=[MovieBox]()
+    var valueToPass:String!
     @IBOutlet weak var tableView: UITableView!
     
 
@@ -40,6 +41,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 159
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("MovieBoxCell") as? MovieBoxCell{
             let movie = movies[indexPath.row]
@@ -49,15 +51,31 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             return MovieBoxCell()
         }
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-
+   
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if let cell = sender as? UITableViewCell
+        {
+            let selectedRow = tableView.indexPathForCell(cell)!.row
+            if segue.identifier == "DetailViewController"
+            {
+                let detailViewController = segue.destinationViewController as? DetailViewController
+                detailViewController?.numberOfCell = selectedRow
+            }
+        }
+        
+
+    }
 
 
 }

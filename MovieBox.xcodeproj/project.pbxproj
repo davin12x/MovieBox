@@ -16,7 +16,9 @@
 		0AE49CC61C509A2900176D31 /* MovieBox+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CC41C509A2900176D31 /* MovieBox+CoreDataProperties.swift */; };
 		0AE49CC71C509A2900176D31 /* MovieBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CC51C509A2900176D31 /* MovieBox.swift */; };
 		0AE49CC91C50A1C100176D31 /* MovieBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CC81C50A1C100176D31 /* MovieBoxCell.swift */; };
-		0AE49CCD1C50AB5900176D31 /* CreateMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CCC1C50AB5900176D31 /* CreateMovie.swift */; };
+		0AE49CCF1C50BEAE00176D31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CCE1C50BEAE00176D31 /* DetailViewController.swift */; };
+		0AE49CD11C514B8B00176D31 /* MovieBoxDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CD01C514B8B00176D31 /* MovieBoxDatabase.swift */; };
+		0AE49CD31C51619F00176D31 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE49CD21C51619F00176D31 /* CV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +33,9 @@
 		0AE49CC41C509A2900176D31 /* MovieBox+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MovieBox+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0AE49CC51C509A2900176D31 /* MovieBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieBox.swift; sourceTree = SOURCE_ROOT; };
 		0AE49CC81C50A1C100176D31 /* MovieBoxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieBoxCell.swift; sourceTree = "<group>"; };
-		0AE49CCC1C50AB5900176D31 /* CreateMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMovie.swift; sourceTree = "<group>"; };
+		0AE49CCE1C50BEAE00176D31 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0AE49CD01C514B8B00176D31 /* MovieBoxDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieBoxDatabase.swift; sourceTree = "<group>"; };
+		0AE49CD21C51619F00176D31 /* CV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				0AE49CC51C509A2900176D31 /* MovieBox.swift */,
 				0AE49CC41C509A2900176D31 /* MovieBox+CoreDataProperties.swift */,
+				0AE49CD01C514B8B00176D31 /* MovieBoxDatabase.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -98,7 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				0AE49CAE1C502EBF00176D31 /* ViewController.swift */,
-				0AE49CCC1C50AB5900176D31 /* CreateMovie.swift */,
+				0AE49CCE1C50BEAE00176D31 /* DetailViewController.swift */,
+				0AE49CD21C51619F00176D31 /* CV.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,9 +185,11 @@
 				0AE49CC61C509A2900176D31 /* MovieBox+CoreDataProperties.swift in Sources */,
 				0AE49CC71C509A2900176D31 /* MovieBox.swift in Sources */,
 				0AE49CAF1C502EBF00176D31 /* ViewController.swift in Sources */,
-				0AE49CCD1C50AB5900176D31 /* CreateMovie.swift in Sources */,
+				0AE49CD11C514B8B00176D31 /* MovieBoxDatabase.swift in Sources */,
 				0AE49CAD1C502EBF00176D31 /* AppDelegate.swift in Sources */,
 				0AE49CB51C502EBF00176D31 /* MovieBox.xcdatamodeld in Sources */,
+				0AE49CD31C51619F00176D31 /* CV.swift in Sources */,
+				0AE49CCF1C50BEAE00176D31 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +339,7 @@
 				0AE49CC01C502EBF00176D31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
